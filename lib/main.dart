@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'google'),
+      title: 'JOKENPO',
       debugShowCheckedModeBanner: false,
       home: Gamescreen(),
     );
