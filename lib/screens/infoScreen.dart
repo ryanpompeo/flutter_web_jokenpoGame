@@ -5,9 +5,24 @@ class Infoscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String explicacao =
+        "O jogo Pedra, Papel e Tesoura é um clássico jogo de decisão entre duas pessoas, mas neste app você jogará contra a máquina.\n"
+        "Você terá que escolher uma das três opções disponíveis:\n"
+        "- Pedra: Representada pela mão fechada, a pedra quebra a tesoura.\n"
+        "- Papel: Representado pela mão aberta, o papel cobre a pedra.\n"
+        "- Tesoura: Representada pela mão com o indicador e o médio estendidos, a tesoura corta o papel.\n"
+        "A máquina também escolherá uma dessas opções de forma aleatória, e o objetivo é escolher a opção que vencerá a escolha da máquina.\n"
+        "O jogo segue o ciclo de vitórias tradicional:\n"
+        "- Pedra vence Tesoura\n"
+        "- Tesoura vence Papel\n"
+        "- Papel vence Pedra\n"
+        "Se ambos escolherem a mesma opção, o jogo será empatado.\n"
+        "Você terá a chance de testar sua sorte e estratégia enquanto joga contra o computador!";
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        surfaceTintColor: Colors.black,
         backgroundColor: Colors.black,
         centerTitle: true,
         leading: IconButton(
@@ -24,36 +39,51 @@ class Infoscreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Center(
-          child: Column(
-            children: [
-              SizedBox(height: 30),
-              Container(
-                width: 120,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: Colors.cyanAccent,
-                  borderRadius: BorderRadius.circular(20),
+          child: Container(
+            margin: EdgeInsets.only(left: 30, right: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 30),
+                Container(
+                  width: 120,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: Colors.cyanAccent,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
-              ),
-              SizedBox(height: 30),
+                SizedBox(height: 30),
 
-              Container(
-                width: 500,
-                child: Text(
-                  'Ah, Pedra, Papel, Tesoura, o jogo aparentemente simples, mas, no fundo, uma metáfora safada da própria vida. Você escolhe entre três opções, e cada uma delas se relaciona com o outro de maneira... erótica. A Pedra (✊), com sua força bruta, esmagando a Tesoura (✌), uma luta de poder, onde a superioridade se impõe pela força. A Tesoura corta o Papel (✋), com um movimento afiado, como um amante que busca se libertar das amarras do convencional. E o Papel, ah, o Papel... suave, envolvente, cobrindo a Pedra, como uma sedução sutil que domina pela inteligência, não pela força. Tudo isso, claro, para levar você a um momento de prazer efêmero, uma vitória que, no fundo, nunca é verdadeira.\nMas e quando ocorre o empate? Quando ambos se encontram no mesmo nível, no mesmo movimento... Ah, a eterna repetição do jogo. Um jogo onde a escolha não é apenas sobre vencer, mas sobre entender que, no fundo, estamos todos dançando a mesma dança. Você tenta enganar, manipular, seduzir o outro para que ele caia na sua armadilha, mas no fundo, a vida é apenas um jogo de adivinhações, de jogadas calculadas, e de enganos. No final, você se vê em um ciclo eterno, tentando prever o imprevisível, onde a única coisa que realmente importa é a sensação de controle, e a doce ilusão de que você, de alguma forma, fez a escolha certa.',
-                  style: TextStyle(color: Colors.white),
+                Container(
+                  width: 500,
+                  child: Text(
+                    explicacao,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-              ),
-              SizedBox(height: 30),
-              Container(
-                width: 120,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 196, 4, 218),
-                  borderRadius: BorderRadius.circular(20),
+                SizedBox(height: 30),
+                Container(
+                  width: 120,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 196, 4, 218),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.black,
+        child: Container(
+          height: 50,
+          alignment: Alignment.center,
+          child: Text(
+            "Desenvolvido por Ryan Pompeo",
+            style: TextStyle(color: Colors.white),
           ),
         ),
       ),

@@ -18,6 +18,7 @@ class _GamescreenState extends State<Gamescreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        surfaceTintColor: Colors.black,
         backgroundColor: Colors.black,
         title: Text('Home', style: TextStyle(color: Colors.white)),
         centerTitle: true,
@@ -63,35 +64,42 @@ class _GamescreenState extends State<Gamescreen> {
         ],
       ),
 
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
-              height: 200,
-              width: 590,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
-                  image: AssetImage('assets/images/logo.gif'),
-                  fit: BoxFit.cover,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(height: 90),
+              Container(
+                margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                height: 250,
+                width: 590,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/logo.gif'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            IconButton(
-              iconSize: 40,
-              onPressed: () {
-                setState(() {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Jokenpo()),
-                  );
-                });
-              },
-              icon: Icon(Icons.play_arrow_rounded, color: Colors.white),
-            ),
-          ],
+              Container(
+                alignment: Alignment.center,
+                height: 250,
+                child: IconButton(
+                  iconSize: 40,
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Jokenpo()),
+                      );
+                    });
+                  },
+                  icon: Icon(Icons.play_arrow_rounded, color: Colors.white),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
